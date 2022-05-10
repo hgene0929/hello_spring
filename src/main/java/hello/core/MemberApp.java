@@ -8,8 +8,9 @@ import hello.core.member.MemberServiceImpl;
 public class MemberApp {
 
     public static void main(String[] args) {
-        /* 클라이언트는 서비스와 연결 */
-        MemberService memberService = new MemberServiceImpl();
+        /* 의존관계 주입을 위한 객체 생성 */
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
 
         /* 회원가입 */
         Member member = new Member(1L, "memberA", Grade.VIP);

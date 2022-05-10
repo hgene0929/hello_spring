@@ -11,9 +11,10 @@ import hello.core.order.OrderServiceImpl;
 public class OrderApp {
 
     public static void main(String[] args) {
-        /* 클라이언트는 서비스와 연결 */
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+        /* 의존관계 주입을 위한 객체 생성 */
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
 
         /* 회원가입 */
         long memberId = 1L;
@@ -21,7 +22,7 @@ public class OrderApp {
         memberService.join(member);
 
         /* 상품주문 */
-        Order order = orderService.createOrder(memberId, "itemA", 10000);
+        Order order = orderService.createOrder(memberId, "itemA", 20000);
 
         /* 결과출력 */
         System.out.println("order = " + order); //Order 객체의 toString() 메서드 출력
