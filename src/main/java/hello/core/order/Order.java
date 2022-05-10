@@ -1,13 +1,13 @@
 package hello.core.order;
 
 public class Order {
-    //주문 엔티티 변수
+    /* 주문 속성 */
     private Long memberId;
     private String itemName;
     private int itemPrice;
     private int discountPrice;
 
-    //주문 생성자
+    /* 생성자 */
     public Order(Long memberId, String itemName, int itemPrice, int discountPrice) {
         this.memberId = memberId;
         this.itemName = itemName;
@@ -15,7 +15,12 @@ public class Order {
         this.discountPrice = discountPrice;
     }
 
-    //getter / setter
+    /* 비즈니스 로직 : 할인적용 금액 */
+    public int calculatePrice() {
+        return itemPrice - discountPrice;
+    }
+
+    /* getter & setter */
     public Long getMemberId() {
         return memberId;
     }
@@ -48,13 +53,14 @@ public class Order {
         this.discountPrice = discountPrice;
     }
 
+    /* 출력시 보기 쉽도록 하는 메서드 */
     @Override
-    public String toString() {
+    public String toString() { //객체 자체를 출력할 경우 toString() 메서드가 호출된다
         return "Order{" +
                 "memberId=" + memberId +
-                ", itemName=" + itemName + '\'' +
+                ", itemName='" + itemName + '\'' +
                 ", itemPrice=" + itemPrice +
-                "discountPrice=" + discountPrice +
+                ", discountPrice=" + discountPrice +
                 "}";
     }
 }
