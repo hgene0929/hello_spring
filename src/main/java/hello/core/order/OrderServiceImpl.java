@@ -29,4 +29,9 @@ public class OrderServiceImpl implements OrderService {
 
         return new Order(memberId, itemName, itemPrice, discountPrice);
     }
+
+    /* 싱글톤 컨테이너 동작 테스트를 위한 코드 */
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
 }

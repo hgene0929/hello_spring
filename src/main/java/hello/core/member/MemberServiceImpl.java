@@ -20,4 +20,9 @@ public class MemberServiceImpl implements MemberService {
     public Member findMember(Long memberId) {
         return memberRepository.findById(memberId);
     }
+
+    /* 싱글톤 컨테이너 동작 테스트를 위한 코드 */
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
 }
