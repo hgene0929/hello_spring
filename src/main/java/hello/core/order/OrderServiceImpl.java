@@ -6,7 +6,10 @@ import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService {
 
     /* 서비스는 저장소 연결 */
@@ -16,6 +19,7 @@ public class OrderServiceImpl implements OrderService {
 
     /* 생성자 주입 :
     관심사의 분리에 따라 외부에서 생성된 생성자를 통해 의존관계를 주입받는다 (사용할 구현체를 받음) */
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
