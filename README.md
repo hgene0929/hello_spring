@@ -11,4 +11,4 @@
 <p>SOLID 원칙을 보충하기 위해 필요한 스프링의 개념에 대해 실습해봅니다.</p>
 
 <h3>개념 정리</h3>
-https://gene0929.tistory.com/category/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%EC%83%81%ED%92%88%EC%A3%BC%EB%AC%B8%20%EC%82%AC%EC%9D%B4%ED%8A%B8%28coreShop%29
+https://gene0929.tistory.com/category/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%EC%83%81%ED%92%88%EC%A3%BC%EB%AC%B8%20%EC%82%AC%EC%9D%B4%ED%8A%B8%28toyprj-2%29
